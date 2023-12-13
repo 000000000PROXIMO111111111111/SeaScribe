@@ -1,0 +1,53 @@
+// Variables
+$primary-color: #000000;
+$secondary-color: #2ecc71;
+
+// Nesting
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+
+  // Child selector
+  h1 {
+    color: $primary-color;
+    margin-bottom: 20px;
+  }
+
+  // Descendant selector
+  p {
+    color: $secondary-color;
+
+    // Pseudo-class selector
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Media query
+  @media (min-width: 768px) {
+    background-color: #fff;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+  }
+}
+
+// Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Using mixin
+.container {
+  @include flex-center;
+  height: 200px;
+  background-color: $primary-color;
+  color: #fff;
+}
